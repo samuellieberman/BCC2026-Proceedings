@@ -8,3 +8,13 @@ In an era where AI and tech influencers often promote jumping directly into fram
      Through practical demonstrations and real-world examples, we'll examine how core JavaScript concepts directly map to modern framework features, using Vue 3 as our primary example. This session will help developers understand why "learning to walk before running" in JavaScript is essential for long-term success in framework development.
 
 See : https://dev.to/nerajno/11-javascript-fundamentals-for-vue-developers-42a1
+
+---
+
+## Speaker: Nerando Johnson
+
+![Nerando Johnson](Nerando_Johnson.webp)
+
+Current Atlanta freeCodeCamp Organizer | Software Developer
+
+[LinkedIn](https://www.linkedin.com/in/nerando-johnson/) | [Blog](https://dev.to/nerajno)

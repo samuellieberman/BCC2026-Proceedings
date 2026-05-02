@@ -40,3 +40,15 @@ This isn’t a legal lecture.
 It’s not an anti-AI sermon.
 
 It’s a candid field report from building fast — and discovering that once strangers use your software, you’re not just a developer anymore. You’re an operator. If you ship fast, you inherit responsibility just as fast. Let’s talk about how to be ready for it.
+
+---
+
+## Speaker: Doug Applegate
+
+![Doug Applegate](Doug_Applegate.webp)
+
+Doug is a Senior DevOps Architect and web systems designer at Ericsson Enterprise Wireless (formerly Cradlepoint). He builds and operates large-scale internal and commercial web platforms. With over a decade of experience in infrastructure, automation, and full-stack systems, he focuses on building software that works in the real world — not just in theory.
+
+Outside of work, Doug is immersed in AI-generated music and creative technology. His wife has 66 musical instruments, his three kids rotate between violin, drums, and singing, the dog enthusiastically attempts to join in, and the cats wisely choose to run and hide.
+
+[LinkedIn](https://www.linkedin.com/in/dapplegator/)

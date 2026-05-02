@@ -15,3 +15,13 @@ In this session we’ll cover:
   Previewing composables in Android Studio 
   And other things... 
 
+
+---
+
+## Speaker: Doug Reece
+
+![Doug Reece](Doug_Reece.webp)
+
+Doug Reece is the owner of R-Technics, Inc., building multimedia software and other projects. He has been a programmer for many years using several languages and platforms and is passionate about the craft of programming.
+
+[LinkedIn](https://www.linkedin.com/in/douglasjreece/)

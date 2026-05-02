@@ -11,3 +11,21 @@ In this session, we’ll create a working MCP server from scratch using .NET and
 Then we’ll go further than a local demo. Using a practical sample inspired by the Azure remote MCP functions approach, we’ll deploy our server to the cloud and connect it to an AI client, turning a simple .NET service into something AI agents can use. 
 
 Along the way, we’ll look at common pitfalls, debugging techniques, and how MCP servers fit into modern AI workflows.
+
+---
+
+## Speaker: Benjamin Michaelis
+
+![Benjamin Michaelis](Benjamin_Michaelis.webp)
+
+Benjamin Michaelis is a software engineer at IntelliTect, where he builds cloud-native systems, developer tools, and full-stack .NET applications that help teams ship faster. He has contributed to IntelliTect’s product offerings, including StormingCastle.com and delivered solutions across higher education, utilities, financial services, and startups.
+
+Benjamin is the primary maintainer of EssentialCSharp.com and co-author of Essential C#. In that role, he drives the site’s roadmap, tooling, and developer experience, including recent work adding AI-powered, context-aware documentation search. An active open-source contributor, he publishes NuGet packages, GitHub Actions, and developer utilities used by teams across the industry.
+
+Beyond his professional work, Benjamin helps lead the Spokane .NET User Group, fostering a vibrant local developer community through technical talks, knowledge sharing, and mentorship. He also teaches .NET programming at Eastern Washington University and mentors developers through IntelliTect.
+
+He holds a B.S. in Software Engineering from Washington State University along with multiple Microsoft and GitHub certifications, including Azure Solutions Architect Expert.
+
+When he’s not coding, he’s probably outdoors on a trail, exploring new places with a camera in hand, or spending time with friends and family.
+
+[LinkedIn](https://www.linkedin.com/in/benjamin-michaelis/) | [Blog](https://benjamin.michaelis.net/blog)

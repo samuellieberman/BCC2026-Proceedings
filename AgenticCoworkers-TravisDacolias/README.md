@@ -11,3 +11,13 @@ We’ll start with the core architecture behind practical AI agents and the kind
 The session will then shift into a visual walkthrough of a working agentic workflow that coordinates LLM reasoning, external tools, and control logic to complete a multi-step task. Rather than focusing on heavy coding, the emphasis will be on orchestration, state, decision points, and "human-in-the-loop" checkpoints so attendees can understand how to design agents that are both useful and trustworthy.
 
 Attendees will leave with a practical mental model for evaluating agent opportunities, choosing the right design pattern, and translating a one-shot LLM interaction into a workflow that can reason, act, and improve over multiple steps.
+
+---
+
+## Speaker: Travis Dacolias
+
+![Travis Dacolias](Travis_Dacolias.webp)
+
+Travis is the founder of Corlatis Group, a Boise-based AI and automation consulting firm. With 11 years of digital experience platform consulting and a background in software development and project management, he helps organizations build autonomous, agentic workflows that solve real business problems.
+
+[LinkedIn](https://www.linkedin.com/in/travisdacolias) | [Blog](https://corlatis.com)

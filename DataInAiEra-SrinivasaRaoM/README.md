@@ -24,3 +24,19 @@ How modern infrastructure made AI practical
 Common data challenges in real-world systems
 A practical approach to preparing data for AI
 How to think about data as a long-term asset, not just input
+
+---
+
+## Speaker: Srinivasa Rao M
+
+![Srinivasa Rao M](Srinivasa_Rao_M.webp)
+
+Srinivasa Rao is a Data Engineer and Platform Lead with over 10 years of experience designing and modernizing large-scale data systems. He has led complex public sector data transformation initiatives involving over 100 million records across decades of legacy systems, migrating them into modern cloud-based architectures using Azure and Microsoft technologies.
+
+His work focuses on solving real-world data challenges — from fragmented legacy environments to building scalable, validated data platforms that support modern applications and AI use cases.
+
+Srinivas is also the founder of DeepTrics, an initiative focused on bridging the gap between academic learning and real-world software development by providing hands-on industry experience to students.
+
+He actively shares insights on data engineering, AI readiness, and system design, helping professionals understand the true foundation behind intelligent systems.
+
+[LinkedIn](https://www.linkedin.com/in/srinivas-rao-de26) | [Blog](https://www.linkedin.com/in/srinivas-rao-de26)

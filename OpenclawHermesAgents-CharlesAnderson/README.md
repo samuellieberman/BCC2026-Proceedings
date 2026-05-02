@@ -11,3 +11,13 @@ You'll learn how to set up autonomous agents that handle real tasks like email, 
 Whether you're a developer curious about local LLMs, agents, or persistent memory systems, this talk will give you practical steps to run private, customizable agents on your own hardware or a cheap VPS. Leave with working examples and the knowledge to start building agents that grow with you.
 
 No prior agent experience required, just bring your curiosity!
+
+---
+
+## Speaker: Charles "Chuck" Anderson
+
+![Charles "Chuck" Anderson](Charles_Chuck_Anderson.webp)
+
+With 30+ years of experience in IT and cybersecurity, I am a passionate and versatile consultant who strives to deliver innovative and effective solutions for my clients. My core competencies include small team leadership, process improvement, technology research, and project management. I have a bachelor's degree in cybersecurity and information assurance, and a MBA at Western Governors University. My mission is to help organizations improve their security posture, mitigate risks, and optimize their performance.
+
+[LinkedIn](https://www.linkedin.com/in/chuckandersonnampaidaho/)

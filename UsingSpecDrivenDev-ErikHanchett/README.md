@@ -8,3 +8,13 @@ AI coding assistants excel at small tasks and isolated features. But when you're
 
 Spec-driven development fixes this. Write the spec first, let the AI build from it, then iterate. This talk breaks down how to do it in three phases, what tradeoffs you'll hit, and how to start using it 
 in your next feature
+
+---
+
+## Speaker: Erik Hanchett
+
+![Erik Hanchett](Erik_Hanchett.webp)
+
+I'm a software developer from Reno, NV. I'm an author of Vue.js in Action by Manning and the Ember.js Cookbook. I'm also a huge fan of teaching, at my YouTube channel Program With Erik.
+
+[LinkedIn](https://www.linkedin.com/in/erikhanchett/) | [Blog](https://x.com/ErikCH)

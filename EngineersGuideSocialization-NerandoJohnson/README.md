@@ -33,3 +33,13 @@ Target Audience:
 - Community organizers building tech communities
 
 Whether you're starting your career or leading a team, this talk provides a systematic approach to networking that feels natural to technical minds. You'll leave with practical tools to build and maintain professional relationships using familiar patterns from your daily work.
+
+---
+
+## Speaker: Nerando Johnson
+
+![Nerando Johnson](Nerando_Johnson.webp)
+
+Current Atlanta freeCodeCamp Organizer | Software Developer
+
+[LinkedIn](https://www.linkedin.com/in/nerando-johnson/) | [Blog](https://dev.to/nerajno)

@@ -2,6 +2,7 @@
 
 Welcome to the official session proceedings from Boise Code Camp 2026. An open check box means we are still working with the speakers to collect their slides, code, etc. into their folder. If the session you are looking for isn't available yet please check back. Thanks!
 
+- [ ] [AI & LLM: Existential Threat, or Shiny New Tool? - Panel](AI-LLM_ExistentialThreat/README.md)
 - [ ] [Back to Basics: Essential JavaScript Foundations for Modern Framework Development - Nerando Johnson](EssentialJavaScriptFoundations-NerandoJohnson/README.md)
 - [ ] [Beyond the Prompt: Building Digital Coworkers with Agentic Workflows - Travis Dacolias](AgenticCoworkers-TravisDacolias/README.md)
 - [ ] [Browser customization: beyond the basics - Jacob Winters](BrowserCustomization-JacobWinters/README.md)
@@ -19,6 +20,7 @@ Welcome to the official session proceedings from Boise Code Camp 2026. An open c
 - [ ] [It's Dangerous to Go Alone - Aaron Bynum](ItsDangerous-AaronBynum/README.md)
 - [ ] [Make Your Serverless Functions Do More with Durable Executions - Erik Hanchett](ServerlessDurableExec-ErikHanchett/README.md)
 - [ ] [Mastering the Agentic Coding Workflow - Mark Michaelis, Benjamin Michaelis](AgenticWorkflow-MarkMichaelis/README.md)
+- [ ] [pgFirstAid - Justin Frye](pgFirstAid-JustinFrye/README.md)
 - [ ] [Programmatic 3D Modeling with OpenSCAD - Jeremy Reeder](OpenSCAD3dModeling-JeremyReeder/README.md)
 - [ ] [Robots Don't Need Sprint Boards - Sean Timm](RobotsDontSprint-SeanTimm/README.md)
 - [ ] [Scratch Jr: Code, Create & Play - Duane Erickson](ScratchJrCode-DuaneErickson/README.md)
@@ -31,8 +33,6 @@ Welcome to the official session proceedings from Boise Code Camp 2026. An open c
 - [ ] [Thinking like a SDET -- Testing Software in the Era of AI Development - Jeanne Allen](ThinkingLikeSdet-JeanneAllen/README.md)
 - [ ] [Using Spec-Driven Development for Production Workflows - Erik Hanchett](UsingSpecDrivenDev-ErikHanchett/README.md)
 - [ ] [Who Owns the Code? - Richard Hundhausen, Bradlee Frazer](WhoOwnsCode-RichardHundhausen/README.md)
-- [ ] [pgFirstAid - Justin Frye](pgFirstAid-JustinFrye/README.md)
-- [ ] [AI & LLM: Existential Threat, or Shiny New Tool? - Panel](AI-LLM_ExistentialThreat/README.md)
 
 ## License
 
