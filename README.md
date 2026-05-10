@@ -10,12 +10,12 @@ Welcome to the official session proceedings from Boise Code Camp 2026. An open c
 - [ ] [C Without a Build System or: How I Killed the Linker - Samuel Lieberman](sessions/SamuelLieberman-CKilledLinker/README.md)
 - [ ] [Code Your Own Arcade Adventure - Duane Erickson](sessions/DuaneErickson-ArcadeAdventure/README.md)
 - [ ] [From Cloud Native to Multi-Cloud Native: Write Once, Deploy Anywhere - Sandeep Pal](sessions/SandeepPal-Multi-CloudNative/README.md)
-- [ ] [From OpenClaw to Hermes: Running Local Autonomous Agents in 2026 - Charles "Chuck" Anderson](sessions/CharlesAnderson-OpenclawHermesAgents/README.md)
+- [x] [From OpenClaw to Hermes: Running Local Autonomous Agents in 2026 - Charles "Chuck" Anderson](sessions/CharlesAnderson-OpenclawHermesAgents/README.md)
 - [ ] [From Scripted to Smart: How to Systematically Humanize Your AI Sales Agent - Lior Mechlovich](sessions/LiorMechlovich-SmartHumanizedAgents/README.md)
 - [ ] [Getting and keeping a developer job in this market from the perspective of a hiring manager - Jeremy Perez](sessions/JeremyPerez-GettingKeepingDevJobs/README.md)
 - [ ] [How Not to Vibe Code Yourself Into a Lawsuit - Doug Applegate](sessions/DougApplegate-VibeCodeLegal/README.md)
 - [ ] [How To Beat Burnout Without Pressing Pause - Nate Hebbert](sessions/NateHebbert-BeatBurnout/README.md)
-- [ ] [Improv Skills for Hackers and Pentesters - Ross Merritt, Jim McKeeth](sessions/RossMerritt-ImprovSkillsHackers/README.md)
+- [x] [Improv Skills for Hackers and Pentesters - Ross Merritt, Jim McKeeth](sessions/RossMerritt-ImprovSkillsHackers/README.md)
 - [ ] [Introduction to Kotlin and Jetpack Compose - Doug Reece](sessions/DougReece-IntroductionKotlinJetpack/README.md)
 - [ ] [It's Dangerous to Go Alone - Aaron Bynum](sessions/AaronBynum-ItsDangerous/README.md)
 - [ ] [Make Your Serverless Functions Do More with Durable Executions - Erik Hanchett](sessions/ErikHanchett-ServerlessDurableExec/README.md)
@@ -32,7 +32,7 @@ Welcome to the official session proceedings from Boise Code Camp 2026. An open c
 - [ ] [The Unkillable Scraper: Data Collection That Doesn't Quit - Aaron Goin](sessions/AaronGoin-UnkillableDataScraper/README.md)
 - [ ] [Thinking like a SDET -- Testing Software in the Era of AI Development - Jeanne Allen](sessions/JeanneAllen-ThinkingLikeSdet/README.md)
 - [ ] [Using Spec-Driven Development for Production Workflows - Erik Hanchett](sessions/ErikHanchett-UsingSpecDrivenDev/README.md)
-- [ ] [Who Owns the Code? - Richard Hundhausen, Bradlee Frazer](sessions/RichardHundhausen-BradleeFrazer-WhoOwnsCode/README.md)
+- [x] [Who Owns the Code? - Richard Hundhausen, Bradlee Frazer](sessions/RichardHundhausen-BradleeFrazer-WhoOwnsCode/README.md)
 
 ## Share the Link
 

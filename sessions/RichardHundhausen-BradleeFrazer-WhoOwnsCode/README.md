@@ -1,6 +1,6 @@
 # Who Owns the Code?
 
-## Richard Hundhausen, Bradlee Frazer
+## Richard Hundhausen & Bradlee Frazer
 
 ### Boise Code Camp 2026 - May 2nd, 2026
 
@@ -25,3 +25,17 @@ Richard is president of Accentient, a company that helps software organizations 
 Copyright and AI lawyer
 
 [LinkedIn](https://www.linkedin.com/in/bradfrazer/)
+
+---
+
+# Infographics 
+
+created by Kevin Rank
+
+![Copyright-Infographic](Copyright-Infographic.webp)
+
+![Copyright-infographic-Fantasy](Copyright-infographic-Fantasy.webp)
+
+![Copyright-infographic-LCARS](Copyright-infographic-LCARS.webp)
+
+![Copyright-Infographic-Steampunk](Copyright-Infographic-Steampunk.webp)

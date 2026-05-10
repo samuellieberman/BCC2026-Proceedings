@@ -6,6 +6,9 @@
 
 What does red team penetration testing and improv comedy have in common? Come and find out.
 
+- [Slides](ImprovForHackers.pdf) (pdf) 
+- [Status Cards](StatusCardsGame.pdf) (pdf)
+
 Improv is about thinking on your feet and accepting what comes up. A vital skill for social engineering, hacking, and penetration testers. Learn how these comedian skills help develop communication, improvisation, and team work. 
 
 This audience participation driven, and a fun time for everyone.
