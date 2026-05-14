@@ -7,7 +7,7 @@ Welcome to the official session proceedings from Boise Code Camp 2026. An open c
 - [ ] [Beyond the Prompt: Building Digital Coworkers with Agentic Workflows - Travis Dacolias](sessions/TravisDacolias-AgenticCoworkers/README.md)
 - [ ] [Browser customization: beyond the basics - Jacob Winters](sessions/JacobWinters-BrowserCustomization/README.md)
 - [ ] [Building Custom MCP Servers in .NET - Benjamin Michaelis](sessions/BenjaminMichaelis-CustomDotNetMcp/README.md)
-- [ ] [C Without a Build System or: How I Killed the Linker - Samuel Lieberman](sessions/SamuelLieberman-CKilledLinker/README.md)
+- [x] [C Without a Build System or: How I Killed the Linker - Samuel Lieberman](sessions/SamuelLieberman-CKilledLinker/README.md)
 - [ ] [Code Your Own Arcade Adventure - Duane Erickson](sessions/DuaneErickson-ArcadeAdventure/README.md)
 - [ ] [From Cloud Native to Multi-Cloud Native: Write Once, Deploy Anywhere - Sandeep Pal](sessions/SandeepPal-Multi-CloudNative/README.md)
 - [x] [From OpenClaw to Hermes: Running Local Autonomous Agents in 2026 - Charles "Chuck" Anderson](sessions/CharlesAnderson-OpenclawHermesAgents/README.md)
