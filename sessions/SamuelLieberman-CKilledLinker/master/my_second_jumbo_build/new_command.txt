@@ -1,0 +1,4 @@
+
+// Will it work now?
+
+cc -w -o hello -I. manual_jumbo.c autogen_jumbo.cpp -Iinc -lGL -lcurl -lcairo -lgtk-3 -lpango-1.0 -lglib-2.0 -lgdk-3 -lgobject-2.0 -lgio-2.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lEGL -lm -lstdc++

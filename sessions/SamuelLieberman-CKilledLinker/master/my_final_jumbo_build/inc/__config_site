@@ -1,0 +1,34 @@
+// Wow, it's very convenient that all the libc++ headers #include this file!
+
+#ifndef INTERCEPT_LIBCXX_COMPILATION_CONFIG_FILE
+#define INTERCEPT_LIBCXX_COMPILATION_CONFIG_FILE
+
+// libc++ wants to tries to add linker annotations to its header files.
+// This is not particularly helpful, since I want to build everything together
+// This should help.
+#define _LIBCPP_BUILDING_LIBRARY
+// ... And this is to deal with the negative consequences of the previous
+// #define. Don't ask me what any of these #defines mean.
+#define _LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
+
+// #define requested by a compiler error. "error: _LIBCPP_HARDENING_MODE
+// must be set to one of the following values: _LIBCPP_HARDENING_MODE_NONE,
+// _LIBCPP_HARDENING_MODE_FAST, _LIBCPP_HARDENING_MODE_EXTENSIVE,
+// _LIBCPP_HARDENING_MODE_DEBUG"
+#define _LIBCPP_HARDENING_MODE_DEFAULT _LIBCPP_HARDENING_MODE_NONE
+
+// Automatically #defined for _WIN32/_MSC_VER targets in libc++'s
+// __configuration/abi.h. Usually #defines _LIBCPP_ABI_VCRUNTIME as a result.
+// This can be prevented by #defining _LIBCPP_NO_VCRUNTIME, but that would
+// be a mistake. VCRUNTIME is necessary to to prevent duplicate symbols
+// when using msvcrt.lib, which is important for testing. However, VCRUNTIME
+// being #defined does mean I have to implement some vcruntime headers myseslf.
+//#define _LIBCPP_ABI_MICROSOFT
+#define _LIBCPP_NO_VCRUNTIME
+
+// Without this define, lots of unnecessary headers are #included, making
+// it a harder to get libc++ to compile properly. I might as well make my
+// life a little easier, yeah?
+#define _LIBCPP_REMOVE_TRANSITIVE_INCLUDES
+
+#endif // INTERCEPT_LIBCXX_COMPILATION_CONFIG_FILE

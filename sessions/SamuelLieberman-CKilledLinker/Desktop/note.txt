@@ -1,0 +1,4 @@
+
+cc -c cypher.c -o cypher.o -Iheaders
+ar rcs static_libraries/libcypher.a cypher.o
+rm cypher.o

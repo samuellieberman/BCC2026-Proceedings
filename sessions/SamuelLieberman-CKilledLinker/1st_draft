@@ -1,0 +1,276 @@
+https://github.com/jimmckeeth/BoiseCodeCamp2026-SlideTemplate/blob/main/ratings.png
+https://github.com/jimmckeeth/BoiseCodeCamp2026-SlideTemplate/blob/main/BCC-app-qr-code.png
+https://github.com/jimmckeeth/BoiseCodeCamp2026-SlideTemplate/blob/main/codecamp-logo.png
+
+background
+https://www.pexels.com/photo/moody-dark-forest-with-mossy-rocks-in-sweden-34502604/
+
+*INTRO SLIDE*
+
+Hello everybody! Thanks for coming to my talk "C Without a Build System, or: How I Killed the Linker". I'm Samuel Lieberman and I'm a recreational programmer. That means I'm free to explore projects that nobody in their right mind would pay me to work on. My favorite thing to do is to start with a simple rules of thumb that most people just use to guide them in the right direction, and I follow those principles way beyond what is practical just to see what is out there. In this case, it lead me to learn a lot about the C programming language and how code and other resources are turned into a working program. I hope with this talk I can share some of what I've learned, and hopefully you can walk out of here feeling as if you wasted just as much time as I have researching these interesting topics.
+
+*WHO IS TSODING SLIDE*
+
+Okay, now do any of you guys guys know who this guy is? This is Tsoding, and he's a programming streamer. We're actually really good friends. Well, he doesn't actually know I exist, but still! Every time he posts a piece of content, I make sure to watch it very closely so that I can download all of my new programming opinions.
+
+One day I was starting a new project, and I was facing a question that many programmers face: what coding environment is the best fit for my new project? If you are wondering what my project was, then don't worry, it doesn't matter. I promise you that my process for deciding my coding environment had nothing to do with the actual project itself. Instead, I just looked to see what Tsoding had to say about it.
+
+*TSODING NOBUILD*
+https://x.com/tsoding/status/1889228119946801256
+https://nitter.net/tsoding/status/1889228119946801256
+https://github.com/tsoding/nob.h
+
+Okay so what is Tsoding even talking about here? What is a build system? Well writing code is awesome, but on occasion programmers want to turn that code into an actual program they can run and give to others. The process of turning code into an application is called building, and even for languages like C it's not always as simple as just compiling the code.
+
+Often times a project will rely on libraries, which is just a fancy term for "other people's code." A static library needs to be downloaded, located within the filesystem, and then combined with the project's code ahead of time using the linker. When a project gets big it can accumulate many files, which all need to be compiled and combined together using the linker. You might want to take a chunk of non-code data like an image or audio and embed them in the final executable using the linker. And that's not to mention dynamic libraries, which also require the linker.
+
+Wow, this linker guy sure does get around... He's everywhere! So what is the linker?
+
+*LINKER SLIDE*
+It's this guy. Scary looking isn't he. I don't know about you guys, but I don't want to get on his bad side.
+https://www.etsy.com/listing/1304740465
+
+How do programmers coordinate all that linking? The answer is that they invented build tools. Build tools are custom scripting languages designed to help coordinate that job of turning code and other resources into a working program. Some examples of purpose built build tools are Makefiles, Cmake files, Ninja files, Meson files, and more. But you don't need to use a language designed for building. You can also use general purpose scripting languages, like PowerShell scripts or batch scripts on Windows or like Bash scripts on Linux or MacOS, or like Python, and more...
+
+I think you might be starting to see one of problems with using build tools. This talk is supposed to be about the C programming language. We love writing C code. And I just named eight languages that AREN'T C! What if the doesn't want to use all of those languages? If a C programmer wants to understand how your C project is put together, I can think of no cruler act than forcing them to read a Python build script you wrote.
+
+But there are more problems. Not every developer will have every build tool on their system to start out, meaning they will have to download yet another build tool AFTER they have already downloaded your project. And that's assuming it's even possible on their computer! Have fun trying to run a batch file on Linux! (That's a different talk actually)
+
+However Nob isn't a language. Nob is just a library. The idea is that if you have a program written in C... Shouldn't its build script be written in C too? If the developer is comfortable reading C code then they will be comfortable reading the Nob script. If the developer is able to compile C code then they will be able to run the build script. Let's make a Nob script!
+
+
+
+/my_first_nob_script/nob.c
+```
+    #define NOB_IMPLEMENTATION
+    #include "nob.h"
+    #undef NOB_IMPLEMENTATION
+    
+    int main(int argc, char **argv) {
+        NOB_GO_REBUILD_URSELF(argc, argv);
+        
+        Nob_Cmd cmd = {0};
+        nob_cmd_append(
+            &cmd,
+            "cc",
+            "messages.c",
+            "-o",
+            "messages",
+            "-I/home/sam/Desktop/headers",
+            "-L/home/sam/Desktop/static_libraries",
+            "-lcypher"
+        );
+        if (!nob_cmd_run(&cmd)) return 1;
+        
+        return 0;
+    }
+```
+
+
+Let's compile the script...
+
+$ cc nob.c -o nob
+
+And let's run it...
+
+$ ./nob
+$ ls
+
+Bam! It works! The executable is right there! And something I like doing is making the script so it always runs the program immediately after compiling. If you compile your code, don't you want to see the result? Let's add that to the Nob script.
+
+
+```
+    nob_cmd_append(&cmd, "./messages");
+    if (!nob_cmd_run(&cmd)) return 1;
+```
+
+
+And re-run the nob script...
+
+$ ./nob
+
+Hang on, look closer there! See that first command? That comes from NOB_GO_REBUILD_URSELF. The very first thing it did was realize that it needs to be updated and then it re-ran itself. And if you look at the end of the script, it exits twice!
+
+Well, this is great and all, but let's get serious. Not everybody stores their library code in /Desktop. Really if we want to do this right we should make a configuration file and allow the user to set the location themselves. So come on guys, let's buckle down and get this done. What format are we going to go with for this configuration file? XML? JSON? INI? What's your favorite configuration format? Let's hear some answers.
+
+How about 'C'?! WE LOVE C! Let's write our configuration file in C! Specifically, we're going to use C macros. So what are macros? Macros are basically the missing link between assembly language and higher level languages. You can almost think of the macro system as a way of writing your own language features if you think that C's built in features aren't enough for you. In fact, some of C's current features were inspired by the macros people chose to use within the community. Variadic functions and boolean variables are just two examples. The macro pre-processor is a very simple stage of compilation. The pre-processor runs immediately after tokenization, basically just after the comments are removed. The way I see it, macros are basically like a word processor for the compiler.
+
+*Switch to word processor*
+
+In a macro system, what you can do is pretty much the same as what you can do in one of these babys. If someone misspells a variable, for example color vs colour, you can use a macro to fix it!
+
+
+```
+    #define colour color
+```
+
+
+That's just the same as find and replace! But macros don't just have that form, they can also be parameterized, so that they can expand differently depending on what is fed to them. So let's make our own language feature. Do you see that line that prints that variable? What if there was some kind of logging feature that printed both the name and the contents of any variable? Let's call it print_str()
+
+
+```
+    #define PRINT_STR(var) printf(#var ": %\n", var)
+```
+
+
+And to see the results, we can use -E.
+
+By the way, if you place two string literals next to eachother then they will be automatically concatinated, so `"colour" ": %\n"` is exactly the same as "colour: %\n"
+
+And let's add two more macros as well.
+
+```
+    #define _STR(text) #text
+    #define XSTR(text) _STR(text)
+```
+
+_STR() stringifies any text passed in as a parameter, and XSTR() allows any macros to be expanded before they are passed into _STR()
+
+So let's create conf.h...
+
+
+```
+    #ifndef CONF_H
+    #define CONF_H
+    
+    #define INCLUDE_DIR /home/sam/Desktop/headers
+    #define LIBRARY_DIR /home/sam/Desktop/static_libraries
+    
+    #endif // CONF_H
+```
+
+
+By the way! #if is a preprocessor directive that is equivalent do deleting a section of text in a text processor. Isn't that neat? Basically what this does is it checks whether the CONF_H macro has been defined yet, and if it hasn't, then it allows the rest of the text to be pasted in. But this #define on the inside of the #ifdef means that if this header is ever encountered again, it will delete it to prevent issues of multiple definition.
+
+And now let's edit nob.c to use these macros instead!
+
+
+```
+    "-I" INCLUDE_DIR,
+    "-L" LIBRARY_DIR,
+```
+
+
+...And it works!
+
+
+Although if you are especially clever, you might realize something. We don't actually need INCLUDE_DIR in nob.h. We could completely bypass our build system like this...
+
+
+```
+    #include "conf.h"
+    #include XSTR(INCLUDE_DIR/cypher.h)
+```
+
+Just look at this for a few seconds. Did you know you could do this? You can't use the string literal concatination trick I brought up before, but you don't need to either. By setting up a system like this, you can allow whoever is editing config.h to mass modify the includes of every header file in your project. For this one thing, we didn't actually need a build system. But that raises an interesting question. Is that a good thing? Do we like having a build system?
+
+*WE LIKE BUILD SYSTEMS SLIDE*
+
+A lot of people say that build systems are important to ensure that every developer's computer is able to reproduce the same setup and execute the same compilation steps. But let's assume for a second that isn't the case. Are there any other benefits to a build system? Well, yes actually. Performing various compilation tasks isn't the only thing that a build system can do. Build systems often generate data and source code themselves. They can perform a bunch of different custom checks of the code. In fact, even though "Nob" stands for "NoBuild", the entire library is clearly just a different sort of build tool.
+
+*WE HATE BUILD SYSTEMS SLIDE*
+
+But we also have to acknowledge that there are a ton of things that really SUCK about build systems. Look at this guy right here. People already hate having to compile programs in the first place. Even the just the process of using a Nob script can be really annoying! First you have to download the project. Then you have to compile the script. Then you run the script. That script does who even knows how many things, and then you finally run the actual program itself. And with more advanced setups there will be even more steps in that process.
+If all someone wants is to change ONE line of code, shouldn't they just be able to download the code, change that line and recompile the program? Do they really need code generators, style enforcers, and no-build build tools? No! Of course not!
+
+https://programmerhumor.io/linux-memes/when-w
+
+Just like how many Github projects package regular old executable programs into releases for users to execute without the need for any code, the ideal project would also package a developer release for programmers to compile without a build system. So let's see if we can do anything like that for a serious project. Starting by solving the issues with having library dependencies and many source files. You know what has multiple source files but doesn't require individually entering them into the compile command? Actually, Nob.h doesn't! Let's open it up to see why.
+
+*read through nob.h and learn why*
+
+But... If we can just #include definitions anyway... Why not repeatedly include every single source file your program needs in one big master source file? Well as it turns out, I wasn't the first person to think of this idea. It's called a jumbo build. A lot of people frown upon it because they believe that a project should enforce some kind of separation between different components, and should make a distinction between the interface of that component, and the internal structure of that component. Frankly, I agree completely with that idea, and it irritates me that most people working with Jumbo builds seem to forgo using header files completely. Me personally, I recommend using header files even if you use a jumbo file. In fact, I think there is actually a useful GCC warning which can tell you if you accidentally use a function that wasn't previously declared in a header file. Anyway, let's try out this Jumbo build thing to see how practical it is. Let's use NAppGUI as an example.
+
+https://nappgui.com/en/home/web/home.html
+
+
+Dang, that's a lot of errors and warnings. Let's look at some of them.
+
+```
+    In file included from jumbo.c:24:
+    nappgui_src/core/buffer.c:21:9: warning: "i_SIZE" redefined
+       21 | #define i_SIZE(buffer) *cast(buffer, uint32_t)
+          |         ^~~~~~
+    In file included from jumbo.c:22:
+    nappgui_src/core/strings.c:27:9: note: this is the location of the previous definition
+       27 | #define i_SIZE(str) *cast(str, uint32_t)
+          |         ^~~~~~
+```
+
+Well reading this, it looks like the same macro was #defined in two different files. Once in buffer.c and once in jumbo.c. Something you should know about macros is that they are local to the compilation unit. A macro definition in one compilation unit does not affect a macro definition in another compilation unit. Since buffer.c used to be its own compilation unit and jumbo.c used to be its own compilation unit, this was never a problem. Now that they are combined into the jumbo unit though, there is a warning, because we never #undef'd i_SIZE() In this case there really isn't an issue since the new definition just replaces the old one, so we can ignore this. Same with i_DATA()
+
+```
+    In file included from jumbo.c:25:
+    nappgui_src/core/dbind.c:2022:16: error: conflicting types for ‘i_create’; have ‘byte_t *(const DBind *, const DBind *)’ {aka ‘unsigned char *(const struct _dbind_t *, const struct _dbind_t *)’}
+     2022 | static byte_t *i_create(const DBind *bind, const DBind *ebind)
+          |                ^~~~~~~~
+    In file included from jumbo.c:12:
+    nappgui_src/osbs/unix/bproc.c:49:14: note: previous definition of ‘i_create’ with type ‘Proc *(int *, pid_t)’ {aka ‘struct _process_t *(int *, int)’}
+       49 | static Proc *i_create(int *pipes, pid_t pid)
+          |              ^~~~~~~~
+```
+
+Okay, this one is an error, so this IS a problem. As you can see, both dbind.c and bproc.c define a static function called i_create(). Static functions work in the exact same way as macros; they are only visible from the compilation unit where they are declared. And so, when we combine them into the same compilation unit, it causes problems. But there is a solution! Let's just rename them using find and replace! Er, I mean preprocessor #defines.
+
+```
+    #define i_create i_create_dbind_c
+    #include "nappgui_src/core/dbind.c"
+    #undef i_create
+```
+
+Problem solved! Now let's run it again!
+
+```
+    In file included from jumbo.c:28:
+    nappgui_src/core/lex.c:28:14: error: redeclaration of ‘enum _state_t’
+       28 | typedef enum _state_t
+          |              ^~~~~~~~
+    In file included from jumbo.c:23:
+    nappgui_src/core/tfilter.c:20:14: note: originally defined here
+       20 | typedef enum _state_t
+          |              ^~~~~~~~
+```
+
+Oof, here's another one. Typedefs are ALSO local to compilation units. So let's rename that one too. Don't worry guys, only a few more to go, I'm pretty sure we can get this knocked out before the hour is over! ...Well actually I took inspiration from those cooking shows and I actually prepared the completed file ahead of time, so let's save ourselves some time and just take a look at that.
+
+As you can see it's almost 1300 lines of code. Wow, NAppGUI really doesn't make this easy, do they? Okay, I admit that I didn't actually type this file out by hand. I wrote a script to read through NAppGUI's source code looking for various static declarations in order to resolve almost all of these conflicts automatically. I use manual_jumbo.c to tie everything together and to make some small adjustments to parts where my script struggles.
+
+I actually also went and took the liberty of forcing our earlier configuration file changes onto NAppGUI using what are called wrapper headers. This ends up shortening our command a bunch. Let's try it out.
+
+...
+
+
+And it works!
+
+*MISSION COMPLETE SLIDE*
+
+It looks like we accomplished our goal of compiling a serious C program with dependencies and everything without a build system. And we only had to mess with the linker a little bit to do it! Thank goodness too, because that guy is scary.
+
+*MISSION COMPLETE? SLIDE*
+
+Well, we did it for Linux anyway. If we want something that works for a Windows developer we are still going to have to do more work. Normally, the process of cross compiling a Windows application involves using something like CygWin (sig-win) or MinGW. I've never actually used either of these, but I'm sure a person could set up so that a CygWin or MinGW project only need a single command to compile. This talk isn't meant to be a MinGW tutorial. Besides, that would work great for a standalone application, but if we are developing a library, then a Microsoft Visual Studio project wouldn't actually be able to link with these libraries. The application binary interface just wouldn't match. Interestingly, there is another option.
+
+*CLANG ABI SLIDE*
+https://blog.llvm.org/2018/03/clang-is-now-used-to-build-chrome-for.html
+
+Clang developers went to quite a bit of effort and now their compiler produces applications that are compatible with Windows on the level of the binary interface. MSVC can link with one of these Clang programs without ever realizing it was compiled by a different compiler, or on a different operating system. Of course, this would require Windows headers and Windows import libraries. And unlike something like MinGW, those headers and import libraries are NOT open source. Windows has very strict rules about who is allowed to touch their headers and import libraries. Basically, the only one who is allowed to use either of these things is someone who has downloaded the Visual Studio Code app. It doesn't matter if the program itself actually depends on something Visual Studio exclusive because when you download MSVC, you are agreeing not to redistribute their stuff.
+
+*OPEN SOURCE WINDOWS HEADERS SLIDE*
+
+Okay, so is there an Open Source Windows headers alternative? Well again, there's MinGW, but MinGW's headers are meant to be used by MinGW developers. They are NOT meant to be a drop in replacement for the Windows headers. There are many areas where MinGW headers differ from Windows headers, and MinGW has even intentionally kept typos and differences in their project just to avoid issues for existing MinGW projects and developers. No, as it turns out, there is another entirely different set of Windows headers we can use, that maybe comes from a surprising source...
+
+*OPEN SOURCE WINELIB HEADERS SLIDE*
+
+The Wine project. Specifically, a really interesting sub-project within Wine. So for those of you who don't know, regular old Wine is a tool to allow people to run Windows headers on Linux. But you should keep in mind WINE's acronym: Wine Is Not an Emulator. Essentially, as a Windows program begins to execute, Wine will forcefully re-link at runtime all of the attempts to call functions in Windows libraries with its own Linux replacement versions of those functions. Wine is considered a compatability layer, and it's much more finicky than any true emulator.
+
+So what is Winelib? Well, not all Windows app developers are content to wait until aspiring Linux users run their programs using Wine. A lot of developers decide to take matters into their own hands and will choose to statically link with Winelib's compatability layer rather than forcing people to rely on manual runtime linking. The tool that the Wine team maintains to allow developers to do this is called Winelib, and the Winelib headers ARE intended to be a drop in replacement for Windows headers. The only problem? These headers are meant to be used to develop LINUX applications! In fact, it's actually pretty darn difficult to trick these headers into letting themselves be used in a Windows project.
+
+Last commands:
+clang -target x86_64-pc-windows-msvc -fno-cxx-exceptions windows_c.c windows_cpp.cpp -Ilibcxx_inc -Iinc -c
+
+lld-link-14 windows_c.o windows_cpp.o /SUBSYSTEM:WINDOWS /OUT:colorview_windows_msvc.exe
+
+Bonus:
+https://thephd.dev/finally-embed-in-c23
+
+https://x.com/tsoding/status/1910938669940105253

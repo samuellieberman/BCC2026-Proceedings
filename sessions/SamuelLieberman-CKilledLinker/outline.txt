@@ -1,0 +1,12 @@
+Introductions
+I watch Tsoding
+I wanted to do a new project
+Tsoding said to write projects using C without a build language
+I took it one step further
+*Jumbo (unity) builds
+*customize and override headers with include paths
+*preprocessor command to embed raw file data
+*Compiler warnings
+*killing the linker
+I'm finally ready to begin my project!
+Tsoding said to write projects using C without any memory safety features

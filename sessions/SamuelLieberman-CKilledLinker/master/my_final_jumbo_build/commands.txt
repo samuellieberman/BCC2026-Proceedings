@@ -1,0 +1,6 @@
+
+Unfortunately Clang's cross compilation is screwed up, so I need two separate commands.
+
+clang -target x86_64-pc-windows-msvc -fno-cxx-exceptions windows_c.c windows_cpp.cpp -Ilibcxx_inc -Iinc -c
+
+lld-link-14 windows_c.o windows_cpp.o /SUBSYSTEM:WINDOWS /OUT:colorview_windows_msvc.exe

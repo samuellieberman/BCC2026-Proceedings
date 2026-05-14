@@ -1,0 +1,14 @@
+Title: C Without a Build System or: How I killed the linker — Boise Code Camp 2026
+Desc:
+This is a talk I gave at Boise Code Camp on May 2nd 2026. It covers various tricks in order to make compiling and cross compiling a C project without a build system as easy as possible. These tricks include specifying API header locations using wrapper headers and a configuration file written in C, writing or generating a jumbo file which includes every source file, and bootstrapping explicit runtime library loading to compile a program for Windows without using MSVC.
+
+Source for some of the things in the talk:
+Boise Code Camp: https://boisecodecamp.com
+Nob.h: https://github.com/tsoding/nob.h
+NAppGUI: https://nappgui.com
+How I bootstrap explicit runtime linking on Windows: https://github.com/arbiter34/GetProcAddress
+Source of the "Linker" photos: https://www.etsy.com/listing/1304740465
+
+More tricks that I didn't have time for:
+You can use the embed directive introduced in C23: https://thephd.dev/finally-embed-in-c23
+You can use preprocessor pragmas in order to enable or disable compiler warnings within the code itself.
